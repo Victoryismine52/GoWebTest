@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup Form</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+  <style>
+    .box {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+  <!-- js -->
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+  <div class="hero is-fullheight is-info is-bold">
+  <div class="hero-body">
+  <div class="container">
+    <h1 class="title has-text-centered">Please Enter your first and last name</h1>
+    <div class="box">
+
+      <!-- our signup form ===================== -->
+      <form id="signup-form" @submit.prevent="processForm">
+        <!-- firstname -->
+        <div class="field">
+          <label class="label">First Name</label>
+          <input 
+            type="text"
+            class="input" 
+            name="firstname"
+            v-model="firstname">
+        </div>
+
+        <!-- lastname -->
+        <div class="field">
+          <label class="label">Last Name</label>
+          <input 
+            type="text" 
+            class="input" 
+            name="lastname" 
+            v-model="lastname">
+        </div>
+
+        <!-- submit button -->
+        <div class="field has-text-right">
+          <button type="submit" class="button is-success">
+            Submit            
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- our javascript -->
+  <script>
+    // plain javscript ==================================
+    // grab the things we need
+    // const signupForm = document.getElementById('signup-form');
+    // const nameInput  = signupForm.querySelector('input[name=name]');
+    // const emailInput = signupForm.querySelector('input[name=email]');
+    // // listen for the submit event
+    // signupForm.addEventListener('submit', processSignupForm);
+    // function processSignupForm(e) {
+    //   e.preventDefault();
+    //   const name = nameInput.value;
+    //   const email = emailInput.value;
+    //   console.log({ name, email });
+    //   alert('Processing!');
+    // }
+    // vue ==========================================
+    var app = new Vue({
+      el: '#signup-form',
+      data: {
+        firstname: '',
+        lastname: '',
+        errors: {
+          firstname: false,
+          lastname: false
+        }
+      },
+      methods: {
+        processForm: function() {
+          console.log({ firstname: this.firstname, lastname: this.lastname });
+          alert('Processing');
+        },
+      }
+    });
+  </script>
+</body>
+</html>
