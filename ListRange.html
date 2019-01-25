@@ -1,0 +1,16 @@
+<html>
+  <Title>"Welcome to the Club Our members include"</Title>
+  <body>
+    {{range .}}
+      <p>{{.FirstName}} {{.LastName}}</p>
+    {{end}}
+<form action="/">
+
+    <input type="submit" value="Start Over">
+
+    <input type="submit" value="No" formaction="/bye">
+
+    <input type="submit" value="Vue Version" formaction="/vueform">
+</form>
+  </body>
+</html>
