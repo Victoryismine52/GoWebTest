@@ -5,14 +5,17 @@ import (
 	"net/http"
 )
 
-type SplashPage struct { //Used to pass Title and question to main page
+//SplashPage Used to pass Title and question to main page
+type SplashPage struct {
 	Title    string
 	Question string
 }
 
-var MembersList []Member // creates variable for storing all members in array (slice)
+// MembersList creates variable for storing all members in array (slice)
+var MembersList []Member
 
-type Member struct { //member structure to store current item
+//Member structure to store current item
+type Member struct {
 	FirstName string
 	LastName  string
 }
