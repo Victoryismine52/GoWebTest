@@ -9,7 +9,7 @@ $ docker version
 
 Download repository
 
-Open terminal to Webtest.1 directory and run the following 
+Open terminal to Webtest directory and run the following 
 $ docker build -t webtest . 
 This will look inside the current directory "." and execute the Dockerfile located there
 Don't forget to add the "." at the end or you won't be providing a directory to load from 
